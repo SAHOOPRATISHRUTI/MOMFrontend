@@ -1,0 +1,372 @@
+@import url("https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css");
+
+body {
+  font-size: 0.875rem;
+}
+
+.notifi-icon {
+  height: 26px;
+  width: 26px;
+}
+
+.div1 {
+  align-items: center;
+  line-height: 1.5;
+  cursor: pointer;
+  padding: 0px 1rem;
+  color: rgb(69, 85, 96);
+  margin-left: 20px;
+  display: flex;
+}
+
+.span1 {
+  padding: 3px;
+  position: absolute;
+  background-color: #ff7278;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  color: white;
+  font-size: 12px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  justify-content: center;
+  margin-top: -34px;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 100%;
+  color: white;
+  z-index: 11;
+  /* Lower than navbar */
+  background-image: url('/assets/sidebar-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bottom-img {
+  opacity: 0.5;
+  width: 100%;
+  margin-top: 335px;
+  
+}
+
+.ntspl-logo {
+  height: 40px;
+  width: 186px;
+}
+
+.user-icon {
+  height: 35px;
+  width: 35px;
+  margin-right: 2px;
+}
+
+.user-name {
+  font-weight: 500;
+}
+
+#sidebar ul li a {
+  padding: 16px 81px 14px 33px;
+  font-size: 1.3em;
+  display: block;
+  color: #ffffff;
+  font-weight: 650;
+}
+
+.iconimg {
+  height: 25px;
+  width: 25px;
+  filter: invert(1);
+  padding-right: -5px;
+}
+
+
+.home {
+  padding: 5px;
+}
+
+.container {
+  margin: 0;
+ 
+}
+
+.main-content {
+  width: 100%;
+  background-color: #e2e6f1;
+  height: 100vh;
+  padding-left: 300px;
+}
+
+.meeting-header {
+  height: 49px;
+  width: 100%;
+  padding: 26px 18px 26px 18px;
+}
+
+.meeting-header h1 {
+  margin: 0;
+  font-size: 30px;
+}
+
+.filter-button {
+  display: flex;
+  align-items: center;
+  background-image: linear-gradient(to right, #2438b2, #773ccb);
+  border: 1px solid #56545d;
+  color: #ffffff;
+  padding: 5px 10px;
+  border-radius: 24px;
+}
+
+.content {
+  margin-left: 250px;
+  width: calc(100% - 250px);
+  padding-top: 19px;
+}
+
+
+
+.nav-item .nav-link img {
+  filter: invert(1);
+  margin-right: 10px;
+}
+
+/* Navbar Styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 300px;
+  width: calc(100% - 250px);
+  background-color: white;
+  color: black;
+  display: flex;
+  align-items: center;
+  padding: 0px 37px 0px 0px;
+  height: 60px;
+  z-index: 10;
+  border-bottom: 1px solid #ddd;
+}
+
+.navbar .navbar-brand {
+  color: black;
+  text-decoration: none;
+  font-size: 1.5em;
+}
+
+.navbar .create-meeting-btn {
+  background-image: linear-gradient(to right, #65d55c, #63a458);
+  color: white;
+  cursor: pointer;
+  border-radius: 24px;
+}
+
+.user-name {
+  margin-left: 10px;
+  color: black;
+}
+
+/* Icon Container Styles */
+.icon-container {
+  position: fixed;
+  top: 60px;
+  left: 300px;
+  width: calc(100% - 250px);
+  background-color: white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 60px;
+  z-index: 9;
+  border-bottom: 1px solid #ddd;
+}
+
+.upper-div {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.home img {
+  width: 50px;
+  height: 50px;
+}
+
+.main-content .meeting-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+.card {
+  height: 479px;
+  width: 122%;
+  border-radius: 29px;
+}
+
+.card-body {
+  height: 100%;
+  padding: 30px;
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  position: relative;
+  margin-left: -36px;
+
+}
+
+input[type="text"] {
+  border: 1px solid #5d00c5;
+  border-radius: 24px;
+  outline: none;
+  background-color: #fafafb;
+  background-image: url('/assets/magnifying-glass.png');
+  background-repeat: no-repeat;
+  background-position: 132px center;
+  background-size: 25px;
+  cursor: pointer;
+  width: 100%;
+  height: 40px;
+  padding-left: 13px;
+}
+
+
+.divider {
+  border: 1px solid #dcdcdc;
+  height: 44px;
+
+}
+
+.heading-color {
+  color: #1c2b76;
+  font-weight: 100;
+}
+
+.div2 {
+  padding: 0px 11px 0px 11px;
+}
+
+.home-icon {
+  height: 23px;
+  width: 23px;
+}
+
+.time {
+  color: #989898;
+}
+.filter-icon{
+  height: 13px;
+  margin-left: 5px;
+}
+.one{
+  height: 26px;
+  width: 26px;
+  border-radius: 50%;
+  color: black;
+  background-color: #ececec;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.right-column{
+color: white;
+}
+.rows-per-page {
+  font-size: 1rem;
+}
+
+.rows-per-page u {
+  text-decoration: underline;
+}
+
+.action {
+  height: 30px;
+  width: 30px;
+  background-color: #dbd2ff;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  line-height: 10px; 
+}
+
+.dot {
+  display: block;
+  line-height: 1;
+  margin: -4px 0;
+  font-weight: 1000;
+}
+
+.btn-sm {
+  margin: 2px 0;
+    background-color: #e0f0ff;
+    border-radius: 5px;
+    padding: 3px;
+}
+.badge {
+  font-size: 0.75rem;
+}
+
+.badge-pill {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  display: inline-block;
+  margin-left: -5%;
+  text-align: center;
+  color: #ffffff;
+  padding: 1px 4px 0px 1px;
+}
+
+.badge-pill:first-child {
+  margin-left:  3px; 
+}
+.chevron-down {
+  position: absolute;
+  right: 20px; 
+  bottom: 20px; 
+  font-size: 1.5em; 
+  color: black; 
+}
+.d1 {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+
+
+.dash {
+  font-size: 20px;
+ 
+  display: flex;
+  align-items: flex-start;
+  color: #ddd;
+  justify-content: flex-start;
+}
+
+.arrow {
+  display: flex;
+  height: 35px;
+  width: 35px;
+  filter:invert(1)
+}

@@ -1,0 +1,264 @@
+
+<body>
+    <!-- navbar here -->
+    <nav class="navbar">
+      <a class="navbar-brand pl-2" href="#">
+        <h2>Meeting Plus</h2>
+      </a>
+      <div class="ml-auto d-flex align-items-center">
+        <button class="btn create-meeting-btn mr-3">Create Meeting</button>
+      </div>
+      <span class="divider"></span>
+      <div class="div1">
+        <a href="#">
+          <img class="notifi-icon" src="/assets/bell.png" />
+          <span class="span1">15</span>
+        </a>
+      </div>
+      <div class="div1">
+        <a href="#">
+          <img
+            class="user-icon d-flex position-relative"
+            src="/assets/user.png"
+          />
+        </a>
+        <div>
+          <div class="user-name">Priyanka</div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="icon-container">
+      <div class="div2 d-flex flex-column">
+        <a
+          href="#"
+          class="icon-link d-flex justify-content-center align-items-center"
+        >
+          <img src="/assets/home.png" alt="" class="home-icon" />
+        </a>
+        <span class="home-span">Home</span>
+      </div>
+
+      <span class="divider"></span>
+
+      <div class="div2 d-flex flex-column">
+        <a
+          href="#"
+          class="icon-link d-flex justify-content-center align-items-center"
+        >
+          <img src="/assets/clock.png" alt="" class="home-icon" />
+        </a>
+        <span>Timeline</span>
+      </div>
+    </div>
+
+    <!-- sidebar here -->
+    <div class="sidebar">
+      <nav id="sidebar" class="d-flex flex-column">
+        <a class="navbar-brand py-4 px-4" href="#">
+          <img
+            class="ntspl-logo d-flex justify-content-center align-items-center"
+            src="/assets/Ntspl-Logo-white.png"
+            alt=""
+          />
+        </a>
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">
+              <img src="/assets/meeting_logo.png" class="iconimg" />
+              Meetings
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <img src="/assets/clipboard_839860.png" class="iconimg" />
+              Actions
+            </a>
+          </li>
+          <li>
+            <div class="d1">
+              <img src="/assets/setting.png" class="iconimg" />
+              <a href="#dashboard" class="dash">Dashboard</a>
+              <img src="/assets/down.png" class="arrow" />
+            </div>
+          </li>
+        </ul>
+        <img class="bottom-img" src="/assets/meeting2.svg" alt="Bottom Image" />
+      </nav>
+    </div>
+
+    <!-- content area here -->
+    <div class="content">
+      <div class="home">
+        <a href="" class="home"
+          ><img
+            src=""
+            alt="home"
+            class="user-icon d-flex justify-content-center align-items-center"
+        /></a>
+      </div>
+    </div>
+    <div class="main-content">
+      <div class="meeting">
+        <div class="meeting-header">
+          <h1>Meetings</h1>
+          <button class="filter-button">
+            Filter
+            <img src="/assets/filter.png" class="filter-icon" />
+          </button>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="card mt-3">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <span class="">Showing 1 to 2 of 2 entries</span>
+              <div class="input-group justify-content-end" style="width: 550px">
+                <div class="search">
+                  <input
+                    class="form-control"
+                    type="text"
+                    placeholder="Search"
+                    aria-label="Search"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="table-responsive">
+              <table class="table table-bordered">
+                <thead>
+                  <tr class="heading-color">
+                    <th>Meeting Date & Time</th>
+                    <th>Meeting Title</th>
+                    <th>Attendees</th>
+                    <th>RSVP Confirmation</th>
+                    <th>Status</th>
+                    <th>Action Due</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>09 Feb 2024<br /><span class="time">11:00 AM</span></td>
+                    <td>Friday morning meeting
+                      <br>
+                      <button class="btn  btn-sm">Yes</button>
+                      <button class="btn  btn-sm">No</button>
+                      <button class="btn  btn-sm">Maye</button>
+                    </td>
+                    <td>
+                      <span class="badge badge-pill badge-primary">SL</span>
+                      <span class="badge badge-pill badge-warning">PK</span>
+                      <span class="badge badge-pill badge-danger">RB</span>
+                      <span class="badge badge-pill badge-info">YH</span>
+                      <span class="badge badge-pill badge-success">DB</span>
+                      +5 More
+                    </td>
+                    <td>10 Attendees<br /><span class="time">5 Yes, 1 No, 5 Awaiting</span></td>
+                    <td><span class="badge badge-success">Scheduled</span></td>
+                    <td><h6>0/0</h6></td>
+                    <td>
+                      <button class="action">
+                        <span class="dot">.</span>
+                        <span class="dot">.</span>
+                        <span class="dot">.</span>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>03 Jan 2024<br /><span class="time">12:00 PM</span></td>
+                    <td>Wednesday Afternoon meeting</td>
+                    <td>
+                      <span class="badge badge-pill badge-primary">SL</span>
+                      <span class="badge badge-pill badge-warning">PK</span>
+                    </td>
+                    <td>2 Attendees<br /><span class="time">2 Yes, 0 No</span></td>
+                    <td><span class="badge badge-primary">Closed</span></td>
+                    <td><h6>2/5</h6></td>
+                    <td>
+                      <button class="action">
+                        <span class="dot">.</span>
+                        <span class="dot">.</span>
+                        <span class="dot">.</span>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>10 Feb 2024<br /><span class="time">12:00 PM</span></td>
+                    <td>Saturday Afternoon meeting
+                      <br>
+                      <button class="btn  btn-sm">Yes</button>
+                      <button class="btn  btn-sm">No</button>
+                      <button class="btn  btn-sm">Maye</button>
+                    </td>
+                    <td>
+                      <span class="badge badge-pill badge-primary">SL</span>
+                      <span class="badge badge-pill badge-warning">PK</span>
+                      <span class="badge badge-pill badge-info">YH</span>
+                    </td>
+                    <td>3 Attendees<br /><span class="time">2 Yes, 1 No, 1 Awaiting</span></td>
+                    <td>
+                      <span class="badge badge-success">Rescheduled</span>
+                    </td>
+                    <td><h6>0/0</h6></td>
+                    <td>
+                      <button class="action">
+                        <span class="dot">.</span>
+                        <span class="dot">.</span>
+                        <span class="dot">.</span>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>03 Feb 2024<br /><span class="time">03:00 PM</span></td>
+                    <td>Saturday Afternoon meeting</td>
+                    <td>
+                      <span class="badge badge-pill badge-warning">PK</span>
+                      <span class="badge badge-pill badge-danger">RB</span>
+                      <span class="badge badge-pill badge-info">YH</span>
+                      <span class="badge badge-pill badge-success">DB</span>
+                    </td>
+                    <td>0 Attendees<br /><span class="time">0 Yes, 5 No, 0 Awaiting</span></td>
+                    <td><span class="badge badge-danger">Cancelled</span></td>
+                    <td><h6>0/0</h6></td>
+                    <td>
+                      <button class="action">
+                        <span class="dot">.</span>
+                        <span class="dot">.</span>
+                        <span class="dot">.</span>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+
+            <div class="d-flex justify-content-start">
+              <div>
+                <span class="one"><</span>
+              </div>
+              <div class="mb-3 ml-1">
+                <span class="one">1</span>
+              </div>
+              <div class="mb-4 ml-1">
+                <span class="one">2</span>
+              </div>
+              <div class="mb-5 ml-1">
+                <span class="one right-column bg-primary">></span>
+              </div>
+          
+
+              <div class="d-flex ml-auto ">
+                <span class="rows-per-page">Rows Per Page <u>20  <i class="fas fa-chevron-down chevron-icon"></i></u></span>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
