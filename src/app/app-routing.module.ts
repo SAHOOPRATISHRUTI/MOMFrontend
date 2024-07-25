@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'set-password', component: SetPasswordComponent },
   {path:'reset-password/MeetingList',component:MeetingListComponent},
   {path:'otp',component:OtpFieldComponent},
-  {path:'reset-otp',component:ResetPasswordComponent}
+  {path:'reset-otps',component:ResetPasswordComponent}
 ];
 
 @NgModule({
