@@ -1,17 +1,19 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router'; // Import Router
-
+import { Router } from '@angular/router';
 import { ServiceService } from '../service/service.service';
 import { ToastrService } from 'ngx-toastr';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-sign-password',
   templateUrl: './sign-password.component.html',
   styleUrls: ['./sign-password.component.css']
 })
-export class SignPasswordComponent  {
-  email: string = '';
-  password: string = '';
+export class SignPasswordComponent {
+  loginForm = new FormGroup({
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', [Validators.required])
+  });
   message: string = '';
 
   constructor(
@@ -21,26 +23,41 @@ export class SignPasswordComponent  {
   ) {}
 
   onLogin() {
-    this.loginService.login1(this.email, this.password).subscribe(
+  const { email, password } = this.loginForm.value;
+  if (typeof email === 'string' && typeof password === 'string') {
+    this.loginService.loginWithPassword(email, password).subscribe(
       response => {
+        console.log('Login Response:', response);
         this.message = response.message;
-        this.toastr.success(this.message); // Show success message with Toastr
-        console.log("Login Successfully");
-        this.router.navigate(['/reset-password/MeetingList']); 
+        this.toastr.success(this.message);
+
+        if (response && response.data.employee) {
+          localStorage.setItem('token', response.data.token);
+          localStorage.setItem('employee', JSON.stringify(response.data.employee));
+
+          const userRole = response.data.employee.role;
+          if (userRole === 'USER') {
+            this.router.navigate(['/user-dashboard']);
+          } else if (userRole === 'ADMIN') {
+            const adminName = response.data.employee.name;
+            this.router.navigate(['/admin-dashboard'], { state: { adminName } });
+          } else {
+            this.toastr.error('Unknown user role');
+          }
+        } else {
+          this.toastr.error('Invalid response structure');
+        }
       },
       error => {
-        if (error.status === 401) {
-          this.message = 'Invalid user';
-        } else if (error.status === 500) {
-          this.message = 'Internal server error. Please try again later.';
-          console.error('Internal Server Error:', error.error); // Log detailed error response
-        } else {
-          this.message = 'An error occurred. Please try again later.';
-          console.error('Unexpected Error:', error);
-        }
-        this.toastr.error(this.message); // Show error message with Toastr
+        // Handle errors
       }
     );
+  } else {
+    this.toastr.error('Please enter valid email and password');
   }
-  
 }
+
+  
+  
+  }
+

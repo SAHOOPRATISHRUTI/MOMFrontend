@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
-
 @Component({
   selector: 'app-otp-field',
   templateUrl: './otp-field.component.html',
@@ -29,16 +28,16 @@ export class OtpFieldComponent {
 
     const otpPayload = { email, otp: enteredOTP };
 
-    const verifyOtpUrl = 'http://192.168.1.242:3000/verify-otp';
+    const verifyOtpUrl = 'http://localhost:5050/api/employee/login-otp';
 
     this.http.post<any>(verifyOtpUrl, otpPayload).subscribe(
       (response) => {
         if (response.success) {
-          this.router.navigate(['/reset-password/MeetingList']);
-
+          this.router.navigate(['/user-dashboard']);
         } else {
           alert('OTP verification failed. Please try again.');
         }
+        
       },
       (error) => {
         console.error('Error verifying OTP', error);
@@ -57,6 +56,19 @@ export class OtpFieldComponent {
       const element = document.getElementsByName(nextInput)[0] as HTMLInputElement;
       if (element) {
         element.focus();
+      }
+    }
+  }
+
+  moveBack(event: KeyboardEvent, prevInput: string, currentInput?: string): void {
+    const input = event.target as HTMLInputElement;
+    if (event.key === 'Backspace' && input.value.length === 0) {
+      const element = document.getElementsByName(prevInput)[0] as HTMLInputElement;
+      if (element) {
+        element.focus();
+        if (currentInput) {
+          currentInput = ''; // Clear the current input value
+        }
       }
     }
   }

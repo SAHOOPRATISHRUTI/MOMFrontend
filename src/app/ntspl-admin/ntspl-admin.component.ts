@@ -12,14 +12,12 @@ import { ServiceService } from '../service/service.service';
 export class NtsplAdminComponent {
   loginForm: FormGroup;
 
-
   constructor(
     private fb: FormBuilder,
     private router: Router,
     private toastr: ToastrService,
     private service: ServiceService
-  )
-   {
+  ) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]]
     });
@@ -31,9 +29,9 @@ export class NtsplAdminComponent {
 
   onSubmit() {
     if (this.loginForm.valid) {
-      const email=this.loginForm.get('email')?.value;
+      const email = this.loginForm.get('email')?.value;
       sessionStorage.setItem('email', email);
-      this.service.generateOtp(this.loginForm.value.email)
+      this.service.requestOtp(this.loginForm.value.email)
         .subscribe({
           next: (response: any) => {
             this.toastr.success('OTP generated successfully', response.otp); 

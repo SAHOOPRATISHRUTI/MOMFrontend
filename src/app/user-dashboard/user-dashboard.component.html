@@ -1,0 +1,7 @@
+<div *ngIf="employee">
+  <h1>Welcome, {{ employee.name }}!</h1>
+  <p>Email: {{ employee.email }}</p>
+</div>
+<div *ngIf="!employee">
+  <p>Loading employee details...</p>
+</div>

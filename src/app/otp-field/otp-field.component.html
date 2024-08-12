@@ -13,10 +13,9 @@
               <label class="mb-1">Enter Your 6 Digit OTP <span>*</span></label>
               <div class="pincode">
                 <div class="digit"><input type="text" [(ngModel)]="otp1" name="otp1" maxlength="1" (input)="moveFocus($event, 'otp2')"></div>
-                <div class="digit"><input type="text" [(ngModel)]="otp2" name="otp2" maxlength="1" (input)="moveFocus($event, 'otp3')"></div>
-                <div class="digit"><input type="text" [(ngModel)]="otp3" name="otp3" maxlength="1" (input)="moveFocus($event, 'otp4')"></div>
-                <div class="digit"><input type="text" [(ngModel)]="otp4" name="otp4" maxlength="1" (input)="moveFocus($event, 'otp5')"></div>
-               
+                <div class="digit"><input type="text" [(ngModel)]="otp2" name="otp2" maxlength="1" (input)="moveFocus($event, 'otp3')" (keydown)="moveBack($event, 'otp1', 'otp2')"></div>
+                <div class="digit"><input type="text" [(ngModel)]="otp3" name="otp3" maxlength="1" (input)="moveFocus($event, 'otp4')" (keydown)="moveBack($event, 'otp2', 'otp3')"></div>
+                <div class="digit"><input type="text" [(ngModel)]="otp4" name="otp4" maxlength="1" (input)="moveFocus($event, 'otp5')" (keydown)="moveBack($event, 'otp3', 'otp4')"></div> 
               </div>
             </div>
             <button type="submit" class="btn1">Verify</button>

@@ -6,7 +6,7 @@ import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-reset-password',
   templateUrl: './reset-password.component.html',
-  styleUrl: './reset-password.component.css'
+  styleUrls: ['./reset-password.component.css']
 })
 export class ResetPasswordComponent {
   password: string = '';
@@ -16,7 +16,8 @@ export class ResetPasswordComponent {
   otp3: string = '';
   otp4: string = '';
 
- showPassword:boolean=false;
+  showPassword:boolean=false;
+
   constructor(private authService: ServiceService, private toastr: ToastrService, private router: Router) {}
 
   getOtp(): string {
@@ -37,7 +38,7 @@ export class ResetPasswordComponent {
 
     const otp = this.getOtp();
     if (otp.length !== 4) {
-      this.toastr.error('Please enter a 6 digit OTP', 'Error');
+      this.toastr.error('Please enter a 4-digit OTP', 'Error');
       return;
     }
 
@@ -47,7 +48,6 @@ export class ResetPasswordComponent {
           console.log(response);
           this.toastr.success('Password updated successfully');
           this.router.navigate(['/ntspl']);
-
         },
         error: error => {
           console.error('Error updating password:', error);
@@ -67,7 +67,10 @@ export class ResetPasswordComponent {
       }
     }
   }
-  togglePasswordVisibilty():void{
-    this.showPassword=!this.showPassword;
-  }
+
+ // reset-password.component.ts
+togglePasswordVisibility(): void {
+  this.showPassword = !this.showPassword;
+}
+
 }

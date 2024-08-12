@@ -13,6 +13,7 @@ export class SetPasswordComponent implements OnInit {
   firstFormGroup!: FormGroup;
   secondFormGroup!: FormGroup;
   isLinear = true;
+  roles = ['USER', 'ADMIN']; // Add roles here
 
   constructor(
     private _formBuilder: FormBuilder,
@@ -24,7 +25,8 @@ export class SetPasswordComponent implements OnInit {
   ngOnInit(): void {
     this.firstFormGroup = this._formBuilder.group({
       firstCtrl: ['', [Validators.required, Validators.minLength(3)]],
-      secondCtrl: ['', [Validators.required, Validators.email]]
+      secondCtrl: ['', [Validators.required, Validators.email]],
+      roleCtrl: ['', Validators.required] // Add role control here
     });
     this.secondFormGroup = this._formBuilder.group({
       thirdCtrl: ['', [Validators.required, Validators.minLength(4)]]
@@ -36,14 +38,15 @@ export class SetPasswordComponent implements OnInit {
       this.toastr.error('Please fill all required fields correctly.', 'Validation Error');
       return;
     }
-
+  
     const userData = {
       name: this.firstFormGroup.value.firstCtrl,
       email: this.firstFormGroup.value.secondCtrl,
-      password: this.secondFormGroup.value.thirdCtrl
+      password: this.secondFormGroup.value.thirdCtrl,
+      role: this.firstFormGroup.value.roleCtrl // Include role in user data
     };
-
-    this.httpService.addUsers(userData).subscribe(
+  
+    this.httpService.createEmployee(userData).subscribe(
       response => {
         console.log('Success:', response);
         this.toastr.success(response.message, 'Success');
@@ -51,10 +54,8 @@ export class SetPasswordComponent implements OnInit {
       },
       error => {
         console.error('Error:', error);
-        if (error.error && error.error.details) {
-          error.error.details.forEach((detail: any) => {
-            this.toastr.error(detail.message, 'Validation Error');
-          });
+        if (error.error && error.error.message) {
+          this.toastr.error(error.error.message, 'Error');
         } else {
           this.toastr.error('An unexpected error occurred.', 'Error');
         }
